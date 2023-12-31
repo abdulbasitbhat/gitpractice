@@ -8,16 +8,19 @@ export default class Todos extends PureComponent {
         let els = [1, 2, 3];
         return (
             <>
+            <div style = {{display: 'flex', justifyContent: 'center'}}>
                 {
-                    els.map((el) => (
-                        <div style={{ display: 'inline-block' }}>
+                    els.map((el) => ( 
+                        <div style={{ display: 'inline-block'}}>
                             <div style={{ margin: '20px 20px 20px 20px' }}>
                                 <TodoItem />
                             </div>
                         </div>
+
                     ))
 
                 }
+                </div>
 
 
 
