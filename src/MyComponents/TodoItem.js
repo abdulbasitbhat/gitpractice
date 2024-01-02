@@ -1,19 +1,19 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import logo from '../logo.svg';
 
-export default class TodoItem extends PureComponent {
-  render() {
-    return (
-      <> 
+export default function TodoItem(props) {
+  return (
+    <> 
             <div className="card" style={{width: '18rem'}}>
                 <img src={logo} className="card-img-top" alt="Img" />
                 <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a className="btn btn-primary">Go somewhere</a>
+                    <h3 className="card-title">{props.todo.title}</h3>
+                    <h4>{props.todo.desc}</h4>
+                    {/* () => props.onDelete(props.todo)  used this instead of props.onDelete(props.todo) becasue later is called on every reload*/}
+                    <button type="button" className="btn btn-info" onClick={() => props.onDelete(props.todo)}>Delete</button>
                 </div>
             </div>
       </>
-    )
-  }
+  )
 }
+
